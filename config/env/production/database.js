@@ -1,3 +1,9 @@
+console.log(env("NODE_ENV"));
+console.log(env("DATABASE_HOST"));
+console.log(env("DATABASE_NAME"));
+console.log(env("DATABASE_USERNAME"));
+console.log(env("DATABASE_PASSWORD"));
+
 module.exports = ({ env }) => ({
   connection: {
     client: "mysql",
