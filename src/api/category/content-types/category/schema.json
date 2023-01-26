@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorys",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categorys",
+    "displayName": "Categorys",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "category"
+    }
+  }
+}
