@@ -11,14 +11,15 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.5.4",
-    "@strapi/plugin-users-permissions": "4.5.4",
-    "@strapi/strapi": "4.5.4",
+    "@strapi/plugin-i18n": "4.6.0",
+    "@strapi/plugin-users-permissions": "4.6.0",
+    "@strapi/provider-email-nodemailer": "^4.6.0",
+    "@strapi/strapi": "4.6.0",
     "mysql": "2.18.1",
     "strapi-provider-upload-azure-storage": "^2.1.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Lucas Prabant"
   },
   "strapi": {
     "uuid": "103ce9a5-7305-41ad-9395-f49764bdf5c0"
