@@ -7,8 +7,8 @@ module.exports = ({ env }) => ({
         host: env("SMTP_HOST", "mail.mymagenta.at"),
         port: env("SMTP_PORT", 587),
         auth: {
-          user: env("SMTP_USERNAME", "info@connyspiler.at"), //
-          pass: env("SMTP_PASSWORD", "Diving-001"), //
+          user: env("SMTP_USERNAME"), //
+          pass: env("SMTP_PASSWORD"), //
         },
         // ... any custom nodemailer options
       },

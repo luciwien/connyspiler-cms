@@ -349,7 +349,7 @@ module.exports = {
 
     try {
       await strapi.plugin("email").service("email").send({
-        to: options.email,
+        to: "conny.spiler@gmail.com",
         from: '"ConnySpiler.at Webseite" info@connyspiler.at', //e.g. single sender verification in SendGrid
         subject: "[connyspiler.at] Eine neue Anfrage",
         text: options.message,
