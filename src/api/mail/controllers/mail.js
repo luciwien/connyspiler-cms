@@ -345,15 +345,20 @@ module.exports = {
   </body>
 </html>
 `;
-
+    console.log(`  to: ${process.env.SMTP_RECIPIENT},
+from: '"ConnySpiler.at Webseite" info@connyspiler.at', //e.g. single sender verification in SendGrid
+subject: "[connyspiler.at] Eine neue Anfrage",`);
     try {
-      await strapi.plugin("email").service("email").send({
-        to: process.env.SMTP_RECIPIENT,
-        from: '"ConnySpiler.at Webseite" info@connyspiler.at', //e.g. single sender verification in SendGrid
-        subject: "[connyspiler.at] Eine neue Anfrage",
-        text: options.message,
-        html: template,
-      });
+      await strapi
+        .plugin("email")
+        .service("email")
+        .send({
+          to: process.env.SMTP_RECIPIENT ?? "info@connyspiler.at",
+          from: '"ConnySpiler.at Webseite" info@connyspiler.at', //e.g. single sender verification in SendGrid
+          subject: "[connyspiler.at] Eine neue Anfrage",
+          text: options.message,
+          html: template,
+        });
       ctx.body = "ok";
     } catch (e) {
       if (e.statusCode === 400) {
