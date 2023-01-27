@@ -10,7 +10,6 @@ module.exports = {
   // Method 1: Creating an entirely custom action
   async sendMail(ctx) {
     const options = ctx.request.body;
-    console.log(options.message);
     const template = `<!DOCTYPE html>
 <html
   lang="en"
@@ -349,7 +348,7 @@ module.exports = {
 
     try {
       await strapi.plugin("email").service("email").send({
-        to: "conny.spiler@gmail.com",
+        to: process.env.SMTP_RECIPIENT,
         from: '"ConnySpiler.at Webseite" info@connyspiler.at', //e.g. single sender verification in SendGrid
         subject: "[connyspiler.at] Eine neue Anfrage",
         text: options.message,
